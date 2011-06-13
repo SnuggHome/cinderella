@@ -104,7 +104,7 @@ module Cinderella
     end
 
     def download_solo_rb
-      response = RestClient.get("http://ciderapp.org/solo.rb")
+      response = RestClient.get("http://fierce-meadow-340.heroku.com/solo.rb")
       if response.code == 200
         File.open(filename, "w") do |fp|
           fp.write(response.body)
