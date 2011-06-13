@@ -1,17 +1,17 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "cinderella/version"
+require "snuggie/version"
 
 Gem::Specification.new do |s|
-  s.name        = "cinderella"
-  s.version     = Cinderella::VERSION
+  s.name        = "snuggie"
+  s.version     = Snuggie::VERSION
   s.authors     = ["Corey Donohoe"]
   s.email       = ["atmos@atmos.org"]
-  s.homepage    = "https://github.com/atmos/cinderella"
+  s.homepage    = "https://github.com/atmos/snuggie"
   s.summary     = %q{The development environment you never wanted to manage alone}
   s.description = %q{The development environment you never wanted to manage alone}
 
-  s.rubyforge_project = "cinderella"
+  s.rubyforge_project = "snuggie"
 
   s.add_dependency "rvm",         "~>0.1.47"
   s.add_dependency "lunchy",      "~>0.4.0"

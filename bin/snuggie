@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require "rubygems"
-require "cinderella"
+require "snuggie"
 require "optparse"
 
 ENV['HOME']     ||= '/Users/bofh'
@@ -14,22 +14,22 @@ config = {
 }
 
 optparse = OptionParser.new do |opts|
-  opts.banner = "Usage: cinderella [options]"
+  opts.banner = "Usage: snuggie [options]"
 
   opts.on( '-h', '--help', 'Display this screen' ) do
     puts opts
     exit
   end
 
-  opts.on( '-u', '--uninstall', 'Uninstall cinderella' ) do
+  opts.on( '-u', '--uninstall', 'Uninstall snuggie' ) do
     config[:action] = 'uninstall'
   end
 
-  opts.on( '-i', '--install', 'Install cinderella [Default]' ) do
+  opts.on( '-i', '--install', 'Install snuggie [Default]' ) do
     config[:action] = 'uninstall'
   end
 
-  opts.on( '-v', '--version', 'Display the cinderella version' ) do
+  opts.on( '-v', '--version', 'Display the snuggie version' ) do
     config[:action] = 'version'
   end
 end
@@ -38,11 +38,11 @@ optparse.parse!
 
 case config[:action]
 when 'uninstall'
-  Cinderella::Runner.uninstall
+  Snuggie::Runner.uninstall
 when 'version'
-  Cinderella::Runner.version
+  Snuggie::Runner.version
 else
-  Cinderella::Runner.run
+  Snuggie::Runner.run
 end
 
 # vim:ft=ruby

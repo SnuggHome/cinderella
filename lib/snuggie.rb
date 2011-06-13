@@ -2,9 +2,9 @@ require "etc"
 require "json"
 require "tmpdir"
 require "rest_client"
-require "cinderella/version"
+require "snuggie/version"
 
-module Cinderella
+module Snuggie
   class Runner
     RECOMMENDED_LLVM   = 2206
     MACOS_FULL_VERSION = `/usr/bin/sw_vers -productVersion`.chomp
@@ -19,12 +19,12 @@ module Cinderella
     end
 
     def self.version
-      puts "Cinderella Version: #{Cinderella::VERSION}"
+      puts "Snuggie Version: #{Snuggie::VERSION}"
     end
 
     def uninstall
       print "Stopping Service: "
-      services = %w/memcached mysql redis mongodb postgresql/
+      services = %w/memcached mysql postgresql/
       services.each do |service|
         print "#{service} "
         sleep 0.5
@@ -32,8 +32,8 @@ module Cinderella
       end
       puts ""
       puts "Removing ~/Developer"
-      system("rm -rf ~/.cinderella.profile ~/Developer")
-      puts "Cinderella successfully uninstalled"
+      system("rm -rf ~/.snuggie.profile ~/Developer")
+      puts "Snuggie successfully uninstalled"
     end
 
     def run
@@ -58,7 +58,7 @@ module Cinderella
         warn "I'm going to continue anyway, *fingers crossed* ;)"
       end
 
-      system("rm -rf ~/.cinderella")
+      system("rm -rf ~/.snuggie")
       system("chef-solo -c #{config}")
       exit($?.to_i)
     end
@@ -113,7 +113,7 @@ module Cinderella
     end
 
     def filename
-      @filename ||= File.expand_path(File.join(Dir.tmpdir, "cinderella.rb"))
+      @filename ||= File.expand_path(File.join(Dir.tmpdir, "snuggie.rb"))
     end
   end
 end

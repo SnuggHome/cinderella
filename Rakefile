@@ -2,11 +2,11 @@ require 'rake/gempackagetask'
 require 'rubygems/specification'
 require 'bundler'
 
-GEM         = "cinderella"
-GEM_VERSION = "0.2.7"
+GEM         = "snuggie"
+GEM_VERSION = "0.2.8"
 AUTHOR      = "Corey Donohoe"
 EMAIL       = "atmos@atmos.org"
-HOMEPAGE    = "http://github.com/atmos/cinderella"
+HOMEPAGE    = "http://github.com/atmos/snuggie"
 SUMMARY     = "The development environment you never wanted to manage alone"
 
 spec = Gem::Specification.new do |s|
@@ -28,7 +28,7 @@ spec = Gem::Specification.new do |s|
   end
 
   s.bindir       = "bin"
-  s.executables  = %w( cinderella )
+  s.executables  = %w( snuggie )
   s.require_path = 'lib'
   s.files        = %w(LICENSE README.md Rakefile) + Dir.glob("{lib}/**/*")
 end
