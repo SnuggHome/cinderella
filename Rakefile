@@ -1,4 +1,4 @@
-require 'rake/gempackagetask'
+require 'rubygems/package_task'
 require 'rubygems/specification'
 require 'bundler'
 
@@ -21,11 +21,11 @@ spec = Gem::Specification.new do |s|
   s.email            = EMAIL
   s.homepage         = HOMEPAGE
 
-  bundle = Bundler::Definition.build('Gemfile', 'Gemfile.lock', { })
-  bundle.dependencies.each do |dep|
-    next unless dep.groups.include?(:runtime)
-    s.add_dependency(dep.name, dep.version_requirements.to_s)
-  end
+  s.add_dependency "rvm",         "~>0.1.47"
+  s.add_dependency "lunchy",      "~>0.4.0"
+  s.add_dependency "chef",        "~>0.9.10"
+  s.add_dependency "json",        "~>1.4.6"
+  s.add_dependency "rest-client", "~>1.6.1"
 
   s.bindir       = "bin"
   s.executables  = %w( snuggie )
@@ -33,6 +33,6 @@ spec = Gem::Specification.new do |s|
   s.files        = %w(LICENSE README.md Rakefile) + Dir.glob("{lib}/**/*")
 end
 
-Rake::GemPackageTask.new(spec) do |pkg|
+Gem::PackageTask.new(spec) do |pkg|
   pkg.gem_spec = spec
 end
