@@ -15,10 +15,10 @@ fi
 which gem | grep -q rvm
 if [ $? -eq 0 ]; then
   gem uninstall snuggie -aIx              >> ~/.snuggie/bootstrap.log 2>&1
-  gem install   snuggie --no-rdoc --no-ri --remote --source http://gems.snugghome.com >> ~/.snuggie/bootstrap.log 2>&1
+  gem install   snuggie --no-rdoc --no-ri --source http://gems.snugghome.com >> ~/.snuggie/bootstrap.log 2>&1
 else
   sudo gem uninstall snuggie -aIx              >> ~/.snuggie/bootstrap.log 2>&1
-  sudo gem install   snuggie --no-rdoc --no-ri --remote --source http://gems.snugghome.com >> ~/.snuggie/bootstrap.log 2>&1
+  sudo gem install   snuggie --no-rdoc --no-ri --source http://gems.snugghome.com >> ~/.snuggie/bootstrap.log 2>&1
   sudo gem update                                 >> ~/.snuggie/bootstrap.log 2>&1
 fi
 
