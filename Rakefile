@@ -3,7 +3,7 @@ require 'rubygems/specification'
 require 'bundler'
 
 GEM         = "snuggie"
-GEM_VERSION = "0.2.11"
+GEM_VERSION = "0.3.0"
 AUTHOR      = "Corey Donohoe"
 EMAIL       = "atmos@atmos.org"
 HOMEPAGE    = "http://github.com/atmos/snuggie"
