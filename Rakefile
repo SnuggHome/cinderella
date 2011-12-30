@@ -3,7 +3,7 @@ require 'rubygems/specification'
 require 'bundler'
 
 GEM         = "snuggie"
-GEM_VERSION = "0.2.9"
+GEM_VERSION = "0.2.11"
 AUTHOR      = "Corey Donohoe"
 EMAIL       = "atmos@atmos.org"
 HOMEPAGE    = "http://github.com/atmos/snuggie"
@@ -21,10 +21,9 @@ spec = Gem::Specification.new do |s|
   s.email            = EMAIL
   s.homepage         = HOMEPAGE
 
-  s.add_dependency "rvm",         "~>0.1.47"
-  s.add_dependency "lunchy",      "~>0.4.0"
-  s.add_dependency "chef",        "~>0.9.10"
-  s.add_dependency "json",        "~>1.4.6"
+  s.add_dependency "lunchy",      "~>0.5.0"
+  s.add_dependency "chef",        "=0.10.4"
+  s.add_dependency "json",        "=1.5.2"
   s.add_dependency "rest-client", "~>1.6.1"
 
   s.bindir       = "bin"
