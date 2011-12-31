@@ -22,10 +22,10 @@ if [ $? -eq 0 ]; then
   gem install   snuggie --no-rdoc --no-ri --source http://gem-source.snugghome.com -y >> ~/.snuggie/bootstrap.log 2>&1
 else
   sudo gem uninstall snuggie -aIx                                                          >> ~/.snuggie/bootstrap.log 2>&1
-  gem install   lunchy --no-rdoc --no-ri                                                   >> ~/.snuggie/bootstrap.log 2>&1
-  gem install   chef --no-rdoc --no-ri                                                     >> ~/.snuggie/bootstrap.log 2>&1
-  gem install   rest-client --no-rdoc --no-ri                                              >> ~/.snuggie/bootstrap.log 2>&1
-  gem install   json --no-rdoc --no-ri                                                     >> ~/.snuggie/bootstrap.log 2>&1
+  sudo gem install   lunchy --no-rdoc --no-ri                                              >> ~/.snuggie/bootstrap.log 2>&1
+  sudo gem install   chef --no-rdoc --no-ri                                                >> ~/.snuggie/bootstrap.log 2>&1
+  sudo gem install   rest-client --no-rdoc --no-ri                                         >> ~/.snuggie/bootstrap.log 2>&1
+  sudo gem install   json --no-rdoc --no-ri                                                >> ~/.snuggie/bootstrap.log 2>&1
   sudo gem install   snuggie --no-rdoc --no-ri --source http://gem-source.snugghome.com -y >> ~/.snuggie/bootstrap.log 2>&1
   sudo gem update                                                                          >> ~/.snuggie/bootstrap.log 2>&1
 fi
